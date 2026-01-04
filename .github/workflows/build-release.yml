@@ -19,7 +19,7 @@ jobs:
             arch: arm64
             platform: linux
             artifact_name: todo-app
-          
+
           - os: macos-latest
             arch: amd64
             platform: macos
@@ -53,20 +53,24 @@ jobs:
       with:
         cmake-version: '3.25.x'
 
-    - name: Configure CMake
+    - name: Configure CMake (Linux ARM64)
+      if: matrix.platform == 'linux' && matrix.arch == 'arm64'
       run: |
-        if [ "${{ matrix.platform }}" = "linux" ] && [ "${{ matrix.arch }}" = "arm64" ]; then
-          cmake -B build -DCMAKE_BUILD_TYPE=Release \
+        cmake -B build -DCMAKE_BUILD_TYPE=Release \
           -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc \
           -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++
-        elif [ "${{ matrix.platform }}" = "macos" ] && [ "${{ matrix.arch }}" = "arm64" ]; then
-          cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64
-        elif [ "${{ matrix.platform }}" = "windows" ] && [ "${{ matrix.arch }}" = "arm64" ]; then
-          cmake -B build -DCMAKE_BUILD_TYPE=Release -A ARM64
-        else
-          cmake -B build -DCMAKE_BUILD_TYPE=Release
-        fi
-      shell: bash
+
+    - name: Configure CMake (macOS ARM64)
+      if: matrix.platform == 'macos' && matrix.arch == 'arm64'
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64
+
+    - name: Configure CMake (Windows ARM64)
+      if: matrix.platform == 'windows' && matrix.arch == 'arm64'
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release -A ARM64
+
+    - name: Configure CMake (Default)
+      if: matrix.arch == 'amd64'
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Build
       run: cmake --build build --config Release
@@ -77,7 +81,7 @@ jobs:
         mkdir -p out
         VERSION=${GITHUB_REF_NAME}
         ASSET_NAME="todo-app-${VERSION}-${{ matrix.platform }}-${{ matrix.arch }}"
-        
+
         if [ "${{ matrix.platform }}" = "windows" ]; then
           FINAL_NAME="${ASSET_NAME}.exe"
           if [ -f "build/Release/${{ matrix.artifact_name }}" ]; then
@@ -98,7 +102,7 @@ jobs:
         else
           shasum -a 256 "${FINAL_NAME}" > "${FINAL_NAME}.sha256"
         fi
-        
+
         echo "artifact_path=out/${FINAL_NAME}" >> $GITHUB_ENV
         echo "checksum_path=out/${FINAL_NAME}.sha256" >> $GITHUB_ENV
 
