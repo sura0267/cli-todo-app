@@ -1,0 +1,8 @@
+{
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.suggest.insertMode": "replace"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
+}
